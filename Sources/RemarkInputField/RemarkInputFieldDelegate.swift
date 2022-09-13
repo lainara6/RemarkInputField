@@ -7,8 +7,8 @@
 //
 
 public protocol RemarkInputFieldDelegate: AnyObject {
-    func remarkInputFieldDidBeginEditing(_ remarkInputTextView: RemarkInputField)
-    func remarkInputFieldDidEndEditing(_ remarkInputTextView: RemarkInputField)
-    func remarkInputFieldDidChange(_ remarkInputTextView: RemarkInputField, text: String)
+    func remarkInputFieldDidBeginEditing(_ remarkInputField: RemarkInputField)
+    func remarkInputFieldDidEndEditing(_ remarkInputField: RemarkInputField)
+    func remarkInputFieldDidChange(_ remarkInputField: RemarkInputField, text: String)
 }
 
