@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RemarkInputField: UIStackView {
+open class RemarkInputField: UIStackView {
 
     public var autocapitalizationType: UITextAutocapitalizationType = .none {
         didSet {
@@ -188,8 +188,7 @@ class RemarkInputField: UIStackView {
         }
     }
 
-
-    required init(coder: NSCoder) {
+    required public init(coder: NSCoder) {
         super.init(coder: coder)
         commitUI()
     }
@@ -283,29 +282,29 @@ class RemarkInputField: UIStackView {
         isActive = false
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         inputTextView.becomeFirstResponder()
     }
 }
 
 extension RemarkInputField: UITextViewDelegate {
     
-    func textViewDidBeginEditing(_ textView: UITextView) {
+    public func textViewDidBeginEditing(_ textView: UITextView) {
         isActive = true
         delegate?.remarkInputFieldDidBeginEditing(self)
     }
 
-    func textViewDidEndEditing(_ textView: UITextView) {
+    public func textViewDidEndEditing(_ textView: UITextView) {
         isActive = false
         delegate?.remarkInputFieldDidEndEditing(self)
     }
 
-    func textViewDidChange(_ textView: UITextView) {
+    public func textViewDidChange(_ textView: UITextView) {
         inputCount = NSString(string: textView.text).length
         delegate?.remarkInputFieldDidChange(self, text: textView.text)
     }
 
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
         if ignoreReturnKey {
             if nil != newText.rangeOfCharacter(from: CharacterSet.newlines) {

@@ -6,7 +6,7 @@
 //  Copyright © 2022 BlueBee. All rights reserved.
 //
 
-protocol RemarkInputFieldDelegate: AnyObject {
+public protocol RemarkInputFieldDelegate: AnyObject {
     func remarkInputFieldDidBeginEditing(_ remarkInputTextView: RemarkInputField)
     func remarkInputFieldDidEndEditing(_ remarkInputTextView: RemarkInputField)
     func remarkInputFieldDidChange(_ remarkInputTextView: RemarkInputField, text: String)
