@@ -36,7 +36,7 @@ open class RemarkInputField: UIStackView {
 
     public var returnKeyType: UIReturnKeyType = .default {
         didSet {
-            inputTextView.keyboardType = keyboardType
+            inputTextView.returnKeyType = returnKeyType
         }
     }
 
@@ -171,6 +171,12 @@ open class RemarkInputField: UIStackView {
     public var limitInputCount: Int = 255 {
         didSet {
             counterLabel.text = "\(inputCount)/\(limitInputCount)"
+        }
+    }
+
+    public var hideInputCountLabel: Bool = false {
+        didSet {
+            counterLabel.isHidden = hideInputCountLabel
         }
     }
     
