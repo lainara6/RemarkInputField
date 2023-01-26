@@ -216,6 +216,7 @@ open class RemarkInputField: UIStackView {
         addArrangedSubview(contentView)
 
         inputTextView = UITextView()
+        inputTextView.backgroundColor = .clear
         inputTextView.autocapitalizationType = autocapitalizationType
         inputTextView.autocorrectionType = autocorrectionType
         inputTextView.keyboardType = keyboardType
