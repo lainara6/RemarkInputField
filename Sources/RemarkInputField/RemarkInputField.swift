@@ -252,10 +252,9 @@ open class RemarkInputField: UIStackView {
         inputTextView.addSubview(centerPlaceholderLabel)
 
         NSLayoutConstraint.activate([
-            centerPlaceholderLabel.topAnchor.constraint(equalTo: inputTextView.topAnchor),
+            centerPlaceholderLabel.heightAnchor.constraint(equalTo: inputTextView.heightAnchor),
             centerPlaceholderLabel.rightAnchor.constraint(equalTo: inputTextView.rightAnchor),
-            centerPlaceholderLabel.bottomAnchor.constraint(equalTo: inputTextView.bottomAnchor),
-            centerPlaceholderLabel.leftAnchor.constraint(equalTo: inputTextView.leftAnchor),
+            centerPlaceholderLabel.leftAnchor.constraint(equalTo: inputTextView.leftAnchor)
         ])
 
         stackView = UIStackView()
